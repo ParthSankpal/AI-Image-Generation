@@ -32,10 +32,10 @@ const Home = () => {
           'Content-Type': 'application/json',
         },
       });
-
+      console.log(response,"POPOP");
       if (response.ok) {
         const result = await response.json();
-        // console.log(result.data.reverse());
+        console.log(result,"okok");
         setAllPosts(result.data.reverse());
       }
     } catch (err) {
@@ -94,7 +94,7 @@ const Home = () => {
             <div className="grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
               {searchText ? (
                 <RenderCards
-                  data={searchedResults}
+                  data={[]}
                   title="No Search Results Found"
                 />
               ) : (
